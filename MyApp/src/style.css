@@ -1,0 +1,47 @@
+body {
+  background:
+    linear-gradient(135deg, #131826 0%, #252d3f 100%),
+    url("../public/images/3add6de9-a6ac-4f6e-8648-8a70aefcf7fc.png");
+
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: auto, 300px;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: auto;
+  color: #ebebeb;
+}
+#navbar-link {
+  font: medium;
+  transition: text-shadow 300ms ease-in-out;
+}
+#navbar-link:hover {
+  text-shadow: 0 0 2px #65a5ad;
+  font-weight: 500;
+}
+.sparkle-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sparkle {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+  color: #ebebeb;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px;
+  pointer-events: none;
+  transition:
+    transform 1.8s ease,
+    opacity 1.8s ease;
+  mix-blend-mode: screen;
+}
+
+.sparkle-visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.5;
+}
