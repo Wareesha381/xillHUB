@@ -20,14 +20,67 @@ function NavBar() {
           <a
             href="#"
             id="navbar-link"
-            className="mr-8 hover:font-bold hover:transition-all hover:duration-300"
+            className="relative
+    inline-block
+    mr-8
+    after:content-['']
+    after:absolute
+    after:left-1/2
+    after:-bottom-1
+    after:h-[2px]
+    after:w-0
+    after:-translate-x-1/2
+    after:rounded-full
+    after:bg-[#22D3EE]
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+  "
           >
             How it works
           </a>
-          <a href="#" className="mr-8" id="navbar-link">
+          <a
+            href="#"
+            className="relative
+    inline-block
+    mr-8
+    after:content-['']
+    after:absolute
+    after:left-1/2
+    after:-bottom-1
+    after:h-[2px]
+    after:w-0
+    after:-translate-x-1/2
+    after:rounded-full
+    after:bg-[#22D3EE]
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+  "
+            id="navbar-link"
+          >
             Skills
           </a>
-          <a href="#" className="mr-8" id="navbar-link">
+          <a
+            href="#"
+            className="relative
+    inline-block
+    mr-8
+    after:content-['']
+    after:absolute
+    after:left-1/2
+    after:-bottom-1
+    after:h-[2px]
+    after:w-0
+    after:-translate-x-1/2
+    after:rounded-full
+    after:bg-[#22D3EE]
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+  "
+            id="navbar-link"
+          >
             Login
           </a>
           <motion.button
