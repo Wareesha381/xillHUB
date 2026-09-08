@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useInsertionEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
+
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [insertButtonContent, setButtonContent] = useState(false);
   return (
     <div>
       <div className="flex px-4 sm:px-6 md:px-10 py-5 fixed shadow-lg shadow-blue-950 w-full justify-between text-lg bg-[linear-gradient(135deg,#252D3F_0%,#1d2535_50%,#131826_100%)] text-[#ebebeb] font-[intel] h-[90px] z-50">
@@ -15,13 +17,17 @@ function NavBar() {
         </div>
 
         <div className="hidden lg:flex lg:items-center">
-          <a href="#" target="_blank" id="navbar-link" className="mr-8">
+          <a
+            href="#"
+            id="navbar-link"
+            className="mr-8 hover:font-bold hover:transition-all hover:duration-300"
+          >
             How it works
           </a>
-          <a href="#" target="_blank" className="mr-8" id="navbar-link">
+          <a href="#" className="mr-8" id="navbar-link">
             Skills
           </a>
-          <a href="" target="_blank" className="mr-8" id="navbar-link">
+          <a href="#" className="mr-8" id="navbar-link">
             Login
           </a>
           <motion.button
@@ -38,8 +44,10 @@ function NavBar() {
               hover:bg-[#1A2030]
               hover:border-[#22D3EE]
               hover:shadow-[0_0_7px_rgba(34,211,238,0.35)]
-               max-w-[200px]
+               max-w-[600px] hover:
             "
+            onMouseEnter={() => setButtonContent(true)}
+            onMouseLeave={() => setButtonContent(false)}
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 30px rgba(34, 211, 238, 0.5)",
@@ -58,7 +66,19 @@ function NavBar() {
             }}
             onClick={() => setIsOpen(false)}
           >
-            Get Started
+            {insertButtonContent ? (
+              <>
+                Get Started
+                <Icon
+                  icon="solar:arrow-right-bold"
+                  width="24"
+                  height="24"
+                  className="inline ml-[5px]"
+                />
+              </>
+            ) : (
+              "Get Started"
+            )}
           </motion.button>
         </div>
 
@@ -99,7 +119,6 @@ function NavBar() {
           <div className="flex flex-col items-center gap-6 px-4">
             <a
               href="#"
-              target="_blank"
               id="navbar-link"
               className="text-[#EBEBEB] hover:text-[#8B5CF6] transition-colors duration-300"
               onClick={() => setIsOpen(false)}
@@ -108,7 +127,6 @@ function NavBar() {
             </a>
             <a
               href="#"
-              target="_blank"
               className="text-[#EBEBEB] hover:text-[#8B5CF6] transition-colors duration-300"
               id="navbar-link"
               onClick={() => setIsOpen(false)}
@@ -117,7 +135,6 @@ function NavBar() {
             </a>
             <a
               href=""
-              target="_blank"
               className="text-[#EBEBEB] hover:text-[#8B5CF6] transition-colors duration-300"
               id="navbar-link"
               onClick={() => setIsOpen(false)}
@@ -140,6 +157,8 @@ function NavBar() {
               hover:shadow-[0_0_7px_rgba(34,211,238,0.35)]
                max-w-[200px]
             "
+              onMouseEnter={() => setButtonContent(true)}
+              onMouseLeave={() => setButtonContent(false)}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(34, 211, 238, 0.5)",
@@ -158,7 +177,19 @@ function NavBar() {
               }}
               onClick={() => setIsOpen(false)}
             >
-              Get Started
+              {insertButtonContent ? (
+                <>
+                  Get Started
+                  <Icon
+                    icon="solar:arrow-right-bold"
+                    width="24"
+                    height="24"
+                    className="inline ml-[5px]"
+                  />
+                </>
+              ) : (
+                "Get Started"
+              )}
             </motion.button>
           </div>
         </div>
