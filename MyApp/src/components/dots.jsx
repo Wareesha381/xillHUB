@@ -1,6 +1,27 @@
 import { useEffect, useState } from "react";
 
-const Signs = ["*", "&", "{}", "[]", "</>", "#", "=="];
+const Signs = [
+  "*",
+  "&",
+  "{}",
+  "[]",
+  "</>",
+  "#",
+  "==",
+  "()",
+  ">",
+  "<",
+  "!",
+  "@",
+  "$",
+  "%",
+  "^",
+  "+",
+  "-",
+  "_",
+  "=",
+  "~",
+];
 
 function SparkleField() {
   let [sign, SetElement] = useState([[], [], []]);
