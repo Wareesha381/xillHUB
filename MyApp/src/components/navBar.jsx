@@ -1,10 +1,8 @@
 import { useInsertionEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [insertButtonContent, setButtonContent] = useState(false);
   return (
     <div>
       <div className="flex px-4 sm:px-6 md:px-10 py-5 fixed shadow-lg shadow-blue-950 w-full justify-between text-lg bg-[linear-gradient(135deg,#252D3F_0%,#1d2535_50%,#131826_100%)] text-[#ebebeb] font-[intel] h-[90px] z-50">
@@ -17,8 +15,8 @@ function NavBar() {
         </div>
 
         <div className="hidden lg:flex lg:items-center">
-          <a
-            href="#"
+          <motion.a
+            href="#how-it-works"
             id="navbar-link"
             className="relative
     inline-block
@@ -36,9 +34,13 @@ function NavBar() {
     after:duration-300
     hover:after:w-full
   "
+            onClick={(e) => {
+              e.defaultPrevented;
+              window.scroll = "smooth";
+            }}
           >
             How it works
-          </a>
+          </motion.a>
           <a
             href="#"
             className="relative
@@ -102,11 +104,11 @@ function NavBar() {
             onMouseEnter={() => setButtonContent(true)}
             onMouseLeave={() => setButtonContent(false)}
             whileHover={{
-              scale: 1.05,
+              scale: 1,
               boxShadow: "0 0 30px rgba(34, 211, 238, 0.5)",
               borderColor: "#22D3EE",
               backgroundColor: "#1A2030",
-              transition: { duration: 0.2 },
+              transition: { duration: 0.7 },
             }}
             whileTap={{
               scale: 0.95,
@@ -119,19 +121,7 @@ function NavBar() {
             }}
             onClick={() => setIsOpen(false)}
           >
-            {insertButtonContent ? (
-              <>
-                Get Started
-                <Icon
-                  icon="solar:arrow-right-bold"
-                  width="24"
-                  height="24"
-                  className="inline ml-[5px]"
-                />
-              </>
-            ) : (
-              "Get Started"
-            )}
+            Get Started
           </motion.button>
         </div>
 
@@ -171,10 +161,13 @@ function NavBar() {
         >
           <div className="flex flex-col items-center gap-6 px-4">
             <a
-              href="#"
+              href="#how-it-works"
               id="navbar-link"
               className="text-[#EBEBEB] hover:text-[#8B5CF6] transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                window.scroll = "smooth";
+              }}
             >
               How it works
             </a>
@@ -210,14 +203,8 @@ function NavBar() {
               hover:shadow-[0_0_7px_rgba(34,211,238,0.35)]
                max-w-[200px]
             "
-              onMouseEnter={() => setButtonContent(true)}
-              onMouseLeave={() => setButtonContent(false)}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 30px rgba(34, 211, 238, 0.5)",
-                borderColor: "#22D3EE",
-                backgroundColor: "#1A2030",
-                transition: { duration: 0.2 },
+              initial={{
+                boxShadow: "0px 3px 4px #c084fc",
               }}
               whileTap={{
                 scale: 0.95,
@@ -230,19 +217,7 @@ function NavBar() {
               }}
               onClick={() => setIsOpen(false)}
             >
-              {insertButtonContent ? (
-                <>
-                  Get Started
-                  <Icon
-                    icon="solar:arrow-right-bold"
-                    width="24"
-                    height="24"
-                    className="inline ml-[5px]"
-                  />
-                </>
-              ) : (
-                "Get Started"
-              )}
+              Get Started
             </motion.button>
           </div>
         </div>
